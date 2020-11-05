@@ -12,7 +12,7 @@ namespace AnimalZoo
         {
             Animal[] allAnimals;
 
-            allAnimals = new Animal[3];
+            allAnimals = new Animal[4];
             /*Cat c = new Cat();
             c.name = "Yukio";*/
             allAnimals[0] = new Cat("Yukio");
