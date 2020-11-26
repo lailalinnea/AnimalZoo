@@ -8,15 +8,16 @@ namespace AnimalZoo
 {
     class Bird : Animal
     {
-        public Bird(string name)
+        public Bird(string name, int age)
         {
-            species = SPECIES.BIRD;
-            canFly = true;
-            base.name = name;
+            SetSpecies(SPECIES.BIRD);
+            SetCanFly(true);
+            SetName(name);
+            SetAge(age);
         }
         public override void IntroduceYourself()
         {
-            Console.WriteLine("Tweet. I am a bird called " + name);
+            Console.WriteLine("Tweet. I am a bird called " + GetName() + ". "/* + " and I am " + age + " years old."*/);
             base.IntroduceYourself();
         }
     }

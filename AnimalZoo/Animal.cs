@@ -8,12 +8,64 @@ namespace AnimalZoo
 {
     class Animal // parent class
     {
-        public enum SPECIES { CAT, DOG, BIRD }; // a special class representing a group of constants
+        public enum SPECIES { CAT, DOG, BIRD }; // a special type representing a group of constants
         // values that dont change
 
+        //instansce variable
         public string name; // a string with names
         public SPECIES species; // 
         public bool canFly; // can fly? true false
+
+        private int birthYear;
+
+        //class variable
+        private static int currentYear = 2020;
+
+        public void SetAge(int age)
+        {
+            birthYear = currentYear - age;
+        }
+
+        public int GetAge ()
+        {
+            int age = currentYear - birthYear;
+            return age;
+        }
+
+        public static void SetYear(int year)
+        {
+            currentYear = year;
+        }
+
+        public string GetName()
+        {
+            return name;
+        }
+
+        public void SetName(string name)
+        {
+            this.name = name;
+        }
+
+        public SPECIES GetSpecies()
+        {
+            return species;
+        }
+
+        public void SetSpecies(SPECIES species)
+        {
+            this.species = species;
+        }
+
+        public bool GetCanFly()
+        {
+            return canFly;
+        }
+
+        public void SetCanFly(bool canFly)
+        {
+            this.canFly = canFly;
+        }
 
         public virtual void IntroduceYourself() // every one is affected by this  (cat dog bird)
         {
@@ -27,6 +79,9 @@ namespace AnimalZoo
             }
             Console.WriteLine("My species is a : " + species); // this is added to everyones intro with their 
             // respective species 
+
+            Console.WriteLine("I am  " + GetAge() + " years old.");
+            Console.WriteLine(" ");
         }
     }
 }

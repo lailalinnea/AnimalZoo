@@ -8,15 +8,17 @@ namespace AnimalZoo
 {
     class Dog : Animal
     {
-        public Dog(string name)
+
+        public Dog(string name, int age)/* : base(age)*/
         {
-            species = SPECIES.DOG;
-            canFly = false;
-            base.name = name;
+            SetSpecies(SPECIES.DOG);
+            SetCanFly(false);
+            SetName(name);
+            SetAge(age);
         }
         public override void IntroduceYourself()
         {
-            Console.WriteLine("Woof. I am a dog thats called " + name);
+            Console.WriteLine("Woof. I am a dog thats called " + GetName() + ". " /*+ " and I am " + SetAge() + " years old."*/);
             base.IntroduceYourself();
         }
     }

@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace AnimalZoo
 {
-    class Cat : Animal
+    class Cat : Animal// the class cat inherits from the class animal
     {
-        public Cat(string name)
+        public Cat(string name, int age)
         {
-            species = SPECIES.CAT;
-            canFly = false;
-            base.name = name;
+            SetSpecies(SPECIES.CAT);
+            SetCanFly(false);
+            SetName(name);
+            SetAge(age);
         }
-        public override void IntroduceYourself()
+        public override void IntroduceYourself() // the class cat overwrites the introduction in the animal class
         {
-            Console.WriteLine("Meow. I am a cat that is called " + name);
+            Console.WriteLine("Meow. I am a cat that is called " + GetName() + ". "/* + " and I am " + age + " years old."*/);
             base.IntroduceYourself();
         }
     }
